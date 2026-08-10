@@ -114,7 +114,7 @@ export const CROP_LIST_ORDER = ["sorgum", "singkong", "jagung"];
 export function getAnalysisResult() {
   return {
     kondisi: {
-      curahHujan: { nilai: "340 mm/musim", tag: "Kering" },
+      curahHujan: { nilai: "340 mm/tahun", tag: "Kering" },
       phTanah: { nilai: "5.2", tag: "Masam" },
       elevasi: { nilai: "780 mdpl" },
       ndvi: { nilai: "0.31", tag: "Rendah" },

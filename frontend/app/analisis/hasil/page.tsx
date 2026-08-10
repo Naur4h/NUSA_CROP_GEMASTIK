@@ -46,7 +46,7 @@ export default function HasilPage() {
     <div className="grid grid-cols-2 gap-3">
       <div className="rounded-xl bg-kondisiCard p-3 text-white">
         <p className="text-[10px] font-semibold uppercase opacity-80">Curah Hujan</p>
-        <p className="font-display text-lg font-bold">{kondisi_lahan.curah_hujan} <span className="text-xs font-normal">mm/musim</span></p>
+        <p className="font-display text-lg font-bold">{kondisi_lahan.curah_hujan} <span className="text-xs font-normal">mm/tahun</span></p>
         <span className="mt-1 inline-block rounded-full bg-sand px-2 py-0.5 text-[10px] font-semibold text-forest-dark">
           {kondisi_lahan.curah_hujan < 1000 ? "Kering" : "Cukup"}
         </span>
