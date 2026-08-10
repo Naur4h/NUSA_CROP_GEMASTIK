@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   title: "NUSA-CROP | Kenali Tanahmu, Tanam Lebih Beragam",
   description:
     "Analisis lahanmu dan temukan rekomendasi tanaman pangan lokal terbaik dengan NUSA-CROP.",
+      icons: {
+    icon: "/images/logo.png",
+  },
 };
 
 export default function RootLayout({
