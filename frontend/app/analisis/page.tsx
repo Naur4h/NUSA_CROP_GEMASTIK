@@ -142,7 +142,7 @@ export default function AnalisisPage() {
                 Lintang (Latitude)
               </label>
               <input
-                type="text"
+                type="number"
                 placeholder="Contoh: -6.0288"
                 value={lat ?? ""}
                 onChange={(e) => setLat(e.target.value === "" ? null : Number(e.target.value))}
@@ -154,7 +154,7 @@ export default function AnalisisPage() {
                 Bujur (Longitude)
               </label>
               <input
-                type="text"
+                type="number"
                 placeholder="Contoh: 106.4856"
                 value={lng ?? ""}
                 onChange={(e) => setLng(e.target.value === "" ? null : Number(e.target.value))}
