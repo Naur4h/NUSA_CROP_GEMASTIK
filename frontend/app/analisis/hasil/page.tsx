@@ -1,5 +1,5 @@
 "use client";
-
+import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Navbar from "@/components/Navbar";
@@ -12,16 +12,17 @@ import RecommendationCard from "@/components/RecommendationCard";
 import { RecommendResponse, STORAGE_KEY_RESULT } from "@/lib/api";
 
 export default function HasilPage() {
-  const router = useRouter();
-  const [showResetModal, setShowResetModal] = useState(false);
-  const [showRiwayat, setShowRiwayat] = useState(false);
-  const [data, setData] = useState<RecommendResponse | null>(null);
+ const router = useRouter();
+const searchParams = useSearchParams();
+const [showResetModal, setShowResetModal] = useState(false);
+const [showRiwayat, setShowRiwayat] = useState(false);
+const [data, setData] = useState<RecommendResponse | null>(null);
 
-  useEffect(() => {
-    const raw = sessionStorage.getItem(STORAGE_KEY_RESULT);
-    if (!raw) { router.push("/analisis"); return; }
-    setData(JSON.parse(raw));
-  }, [router]);
+useEffect(() => {
+  const raw = sessionStorage.getItem(STORAGE_KEY_RESULT);
+  if (!raw) { router.push("/analisis"); return; }
+  setData(JSON.parse(raw));
+}, [router, searchParams]);
 
   if (!data) return null;
   const { kondisi_lahan, rekomendasi } = data.recommendation;

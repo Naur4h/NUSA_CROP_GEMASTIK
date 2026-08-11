@@ -105,11 +105,11 @@ export default function RiwayatModal({
 
   if (!open) return null;
 
-  const handleItemClick = (item: RiwayatItem) => {
-    sessionStorage.setItem(STORAGE_KEY_RESULT, JSON.stringify(riwayatToRecommendResponse(item)));
-    onClose();
-    router.push("/analisis/hasil");
-  };
+const handleItemClick = (item: RiwayatItem) => {
+  sessionStorage.setItem(STORAGE_KEY_RESULT, JSON.stringify(riwayatToRecommendResponse(item)));
+  onClose();
+  router.push(`/analisis/hasil?riwayat=${item.id}`);
+};
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-5">
