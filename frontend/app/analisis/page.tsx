@@ -169,7 +169,7 @@ export default function AnalisisPage() {
 
           <div className="mb-4">
             <label className="mb-1 block text-xs font-bold uppercase text-forest-dark">
-              Masukkan Luas Lahan
+              Masukkan Luas Lahan (Opsional)
             </label>
             <input
               type="text"
@@ -182,7 +182,7 @@ export default function AnalisisPage() {
 
           <div className="mb-6">
             <label className="mb-1 block text-xs font-bold uppercase text-forest-dark">
-              Masukkan Target Musim Tanam
+              Masukkan Target Musim Tanam (Opsional)
             </label>
             <select
               value={musimTanam}
