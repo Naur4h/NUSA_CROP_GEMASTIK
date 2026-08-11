@@ -62,17 +62,32 @@ export default function AnalisisPage() {
   //   router.push("/analisis/loading");
   // };
 
+  // const handleSubmit = () => {
+  // if (lat === null || lng === null) {
+  //   setFormError("Isi koordinat dulu ya (klik peta atau isi manual).");
+  //   return;
+  // }
+  // if (!luasLahan) {
+  //   setFormError("Luas lahan wajib diisi.");
+  //   return;
+  // }
+  // if (!musimTanam) {
+  //   setFormError("Target musim tanam wajib dipilih.");
+  //   return;
+  // }
+  // setFormError("");
+
+  // const payload = {
+  //   lat,
+  //   lon: lng,
+  //   luas_lahan: Number(luasLahan),
+  //   musim_target: musimTanam as "hujan" | "kemarau",
+  //   anonymous_id: getAnonymousId(),
+  // };
+
   const handleSubmit = () => {
   if (lat === null || lng === null) {
     setFormError("Isi koordinat dulu ya (klik peta atau isi manual).");
-    return;
-  }
-  if (!luasLahan) {
-    setFormError("Luas lahan wajib diisi.");
-    return;
-  }
-  if (!musimTanam) {
-    setFormError("Target musim tanam wajib dipilih.");
     return;
   }
   setFormError("");
@@ -80,8 +95,8 @@ export default function AnalisisPage() {
   const payload = {
     lat,
     lon: lng,
-    luas_lahan: Number(luasLahan),
-    musim_target: musimTanam as "hujan" | "kemarau",
+    luas_lahan: luasLahan ? Number(luasLahan) : undefined,
+    musim_target: musimTanam ? (musimTanam as "hujan" | "kemarau") : undefined,
     anonymous_id: getAnonymousId(),
   };
 

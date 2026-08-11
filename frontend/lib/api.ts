@@ -183,11 +183,19 @@ export type RecommendResponse = {
   };
 };
 
+// export type AnalisisPayload = {
+//   lat: number;
+//   lon: number;
+//   luas_lahan: number;
+//   musim_target: "hujan" | "kemarau";
+//   anonymous_id: string;
+// };
+
 export type AnalisisPayload = {
   lat: number;
   lon: number;
-  luas_lahan: number;
-  musim_target: "hujan" | "kemarau";
+  luas_lahan?: number;
+  musim_target?: "hujan" | "kemarau";
   anonymous_id: string;
 };
 
