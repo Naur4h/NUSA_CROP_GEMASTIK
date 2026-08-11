@@ -1,4 +1,5 @@
 "use client";
+import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
@@ -11,7 +12,7 @@ import NdviScale from "@/components/NdviScale";
 import RecommendationCard from "@/components/RecommendationCard";
 import { RecommendResponse, STORAGE_KEY_RESULT } from "@/lib/api";
 
-export default function HasilPage() {
+function HasilContent()  {
  const router = useRouter();
 const searchParams = useSearchParams();
 const [showResetModal, setShowResetModal] = useState(false);
@@ -103,5 +104,12 @@ useEffect(() => {
       <Modal open={showResetModal} onClose={() => setShowResetModal(false)} title="Apakah anda yakin untuk isi ulang data?" onConfirm={() => router.push("/analisis")} />
       <RiwayatModal open={showRiwayat} onClose={() => setShowRiwayat(false)} />
     </div>
+  );
+}
+export default function HasilPage() {
+  return (
+    <Suspense fallback={null}>
+      <HasilContent />
+    </Suspense>
   );
 }
