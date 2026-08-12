@@ -102,8 +102,7 @@
 
 import { useParams, useRouter } from "next/navigation";
 import Image from "next/image";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+
 import { useCropDetail } from "@/lib/useCropDetail";
 import { getCropImage } from "@/lib/api";
 
@@ -116,11 +115,11 @@ export default function SyaratTumbuhPage() {
   if (detail === null) {
     return (
       <div className="flex min-h-screen flex-col bg-white">
-        <Navbar />
+      
         <section className="flex flex-1 items-center justify-center px-5 text-center text-forest-dark">
           <p>Data tanaman tidak ditemukan.</p>
         </section>
-        <Footer />
+        
       </div>
     );
   }
@@ -129,7 +128,7 @@ export default function SyaratTumbuhPage() {
 
   return (
     <div className="flex min-h-screen flex-col bg-white">
-      <Navbar />
+     
       <section className="flex-1">
         <div className="px-4 py-3">
           <button onClick={() => router.back()} className="text-sm text-forest-dark hover:underline">
@@ -150,7 +149,7 @@ export default function SyaratTumbuhPage() {
           </ul>
         </div>
       </section>
-      <Footer />
+   
     </div>
   );
 }

@@ -3,8 +3,7 @@ import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+
 import StepProgress from "@/components/StepProgress";
 import Modal from "@/components/Modal";
 import RiwayatModal from "@/components/RiwayatModal";
@@ -29,8 +28,8 @@ useEffect(() => {
   const { kondisi_lahan, rekomendasi } = data.recommendation;
 
   return (
-   <div className="flex min-h-screen flex-col bg-white">
-      <Navbar onRiwayatClick={() => setShowRiwayat(true)} />
+   <div className="flex min-h-screen flex-col bg-[#FAF9F6]">
+    
       <StepProgress step={3} label="Langkah 3: Terima Rekomendasi" />
 
       <section className="flex-1 px-4 py-4">
@@ -44,7 +43,7 @@ useEffect(() => {
       Kondisi Lingkungan Terdeteksi
     </h3>
   </div>
-<div className="rounded-b-2xl bg-white p-4 shadow-lg">
+<div className="rounded-b-2xl bg-[#FAF9F6] p-4 shadow-lg">
     <div className="grid grid-cols-2 gap-3">
       <div className="rounded-xl bg-kondisiCard p-3 text-white">
         <p className="text-[10px] font-semibold uppercase opacity-80">Curah Hujan</p>
@@ -82,7 +81,7 @@ useEffect(() => {
       Rekomendasi Tanaman Lokal
     </h3>
   </div>
-<div className="rounded-b-2xl bg-white p-4 shadow-lg">
+<div className="rounded-b-2xl bg-[#FAF9F6] p-4 shadow-lg">
     <div className="space-y-3">
       {rekomendasi.map((r, i) => (
         <RecommendationCard
@@ -100,7 +99,6 @@ useEffect(() => {
 </div>
       </section>
 
-      <Footer />
       <Modal open={showResetModal} onClose={() => setShowResetModal(false)} title="Apakah anda yakin untuk isi ulang data?" onConfirm={() => router.push("/analisis")} />
       <RiwayatModal open={showRiwayat} onClose={() => setShowRiwayat(false)} />
     </div>

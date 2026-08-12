@@ -168,8 +168,7 @@
 import { useParams, useRouter } from "next/navigation";
 import Image from "next/image";
 import { ChevronRight, Leaf, Calendar, BarChart3 } from "lucide-react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+
 import CircularGauge from "@/components/CircularGauge";
 import { useCropDetail } from "@/lib/useCropDetail";
 import { getCropImage } from "@/lib/api";
@@ -183,11 +182,11 @@ export default function DetailTanamanPage() {
   if (detail === null) {
     return (
       <div className="flex min-h-screen flex-col bg-white">
-        <Navbar />
+    
         <section className="flex flex-1 items-center justify-center px-5 text-center text-forest-dark">
           <p>Data tanaman tidak ditemukan. Coba analisis ulang.</p>
         </section>
-        <Footer />
+     
       </div>
     );
   }
@@ -200,7 +199,7 @@ export default function DetailTanamanPage() {
 
   return (
     <div className="flex min-h-screen flex-col bg-white">
-      <Navbar />
+    
       <section className="flex-1">
         <div className="px-4 py-3">
           <button onClick={() => router.push("/analisis/hasil")} className="text-sm text-forest-dark hover:underline">
@@ -278,7 +277,7 @@ export default function DetailTanamanPage() {
           </div>
         </div>
       </section>
-      <Footer />
+  
     </div>
   );
 }

@@ -3,15 +3,14 @@
 import { useState } from "react";
 import RiwayatModal from "@/components/RiwayatModal";
 import Image from "next/image";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+
 import { ArrowUpRight } from "lucide-react";
 export default function HomePage() {
   const [showRiwayat, setShowRiwayat] = useState(false);
 
   return (
-    <div className="flex min-h-screen flex-col bg-white">
-      <Navbar onRiwayatClick={() => setShowRiwayat(true)} />
+    <div className="flex min-h-screen flex-col bg-[#FAF9F6]">
+     
 
       {/* HERO */}
       <section className="px-4 pt-4">
@@ -85,7 +84,7 @@ export default function HomePage() {
                 )}
               </div>
 
-              <div className="flex-1 rounded-2xl bg-white p-4 shadow-lg mb-5">
+              <div className="flex-1 rounded-2xl bg-[#FAF9F6] p-4 shadow-lg mb-5">
                 <h4 className="mb-1 font-display text-sm font-bold text-[#0A3323]">
                   {step.title}
                 </h4>
@@ -98,8 +97,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <Footer />
-
+   
       <RiwayatModal open={showRiwayat} onClose={() => setShowRiwayat(false)} />
     </div>
   );

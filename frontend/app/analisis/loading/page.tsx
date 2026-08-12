@@ -3,8 +3,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+
 import StepProgress from "@/components/StepProgress";
 import Modal from "@/components/Modal";
 import RiwayatModal from "@/components/RiwayatModal";
@@ -54,15 +53,15 @@ export default function LoadingPage() {
   }, [router]);
 
   return (
-    <div className="flex min-h-screen flex-col bg-white">
-      <Navbar onRiwayatClick={() => setShowRiwayat(true)} />
+    <div className="flex min-h-screen flex-col bg-[#FAF9F6]">
+   
     <StepProgress
   step={2}
   label="Langkah 2: Analisis Cerdas NUSA-CROP"
 />
       <section className="flex flex-1 items-center justify-center px-4 py-6">
 <div className="-mt-6 w-full max-w-sm rounded-2xl bg-loadingCard p-8 text-center text-white">
-          <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-white">
+          <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-[#FAF9F6]">
             <Loader2 className="h-7 w-7 animate-spin text-loadingCard" />
           </div>
           <h2 className="mb-5 font-display text-base font-bold">
@@ -83,7 +82,7 @@ export default function LoadingPage() {
         </div>
       </section>
 
-      <Footer />
+   
 
       <RiwayatModal
         open={showRiwayat}
