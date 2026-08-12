@@ -10,12 +10,13 @@ type BottomNavProps = {
 
 export default function BottomNav({ onRiwayatClick }: BottomNavProps) {
   const pathname = usePathname();
+  const isAnalisisActive = pathname.startsWith("/analisis");
 
   return (
     <nav className="fixed bottom-0 left-0 right-0 z-40 mx-auto flex w-full max-w-[420px] bg-sand">
       <Link
         href="/#cara-pakai"
-        className="flex flex-1 flex-col items-center gap-0.5 py-2.5 text-[#0A3323]"
+        className="flex flex-1 flex-col items-center gap-0.5 py-2.5 text-gray-500 transition-transform active:scale-90 active:text-[#0A3323]"
       >
         <CircleHelp className="h-5 w-5" />
         <span className="text-[11px] font-semibold">Cara Pakai</span>
@@ -23,7 +24,7 @@ export default function BottomNav({ onRiwayatClick }: BottomNavProps) {
 
       <button
         onClick={onRiwayatClick}
-        className="flex flex-1 flex-col items-center gap-0.5 py-2.5 text-[#0A3323]"
+        className="flex flex-1 flex-col items-center gap-0.5 py-2.5 text-gray-500 transition-transform active:scale-90 active:text-[#0A3323]"
       >
         <ScrollText className="h-5 w-5" />
         <span className="text-[11px] font-semibold">Riwayat</span>
@@ -31,7 +32,9 @@ export default function BottomNav({ onRiwayatClick }: BottomNavProps) {
 
       <Link
         href="/analisis"
-        className="flex flex-1 flex-col items-center gap-0.5 py-2.5 text-[#0A3323]"
+        className={`flex flex-1 flex-col items-center gap-0.5 py-2.5 transition-transform active:scale-90 ${
+          isAnalisisActive ? "text-[#0A3323]" : "text-gray-500"
+        }`}
       >
         <Search className="h-5 w-5" />
         <span className="text-[11px] font-semibold">Analisis</span>

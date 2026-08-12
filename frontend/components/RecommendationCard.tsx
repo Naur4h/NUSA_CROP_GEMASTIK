@@ -25,7 +25,7 @@ export default function RecommendationCard({
   return (
     <button
       onClick={onClick}
-      className="flex w-full items-stretch overflow-hidden rounded-2xl bg-white shadow-sm transition-transform hover:scale-[1.01]"
+      className="flex w-full items-stretch overflow-hidden rounded-2xl bg-white shadow-md transition-transform hover:scale-[1.01]"
     >
       <span
         className={`flex w-12 shrink-0 items-center justify-center ${rankColor(rank)} font-display text-lg font-bold text-forest-dark`}

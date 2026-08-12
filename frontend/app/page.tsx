@@ -9,7 +9,7 @@ export default function HomePage() {
   const [showRiwayat, setShowRiwayat] = useState(false);
 
   return (
-    <div className="flex min-h-screen flex-col bg-[#FAF9F6]">
+    <div className="flex min-h-screen flex-col bg-white">
      
 
       {/* HERO */}

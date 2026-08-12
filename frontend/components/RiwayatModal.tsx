@@ -129,7 +129,7 @@ const handleItemClick = (item: RiwayatItem) => {
             <button
               key={item.id}
               onClick={() => handleItemClick(item)}
-              className="flex w-full items-stretch overflow-hidden rounded-2xl bg-white shadow-sm"
+              className="flex w-full items-stretch overflow-hidden rounded-2xl bg-white shadow-md"
             >
               <span className="flex w-10 shrink-0 items-center justify-center bg-moss font-display text-lg font-bold text-white">
                 {i + 1}

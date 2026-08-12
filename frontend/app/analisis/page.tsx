@@ -113,7 +113,7 @@ export default function AnalisisPage() {
   };
 
   return (
-    <div className="flex min-h-screen flex-col bg-[#FAF9F6]">
+    <div className="flex min-h-screen flex-col bg-white">
    
       <section className="flex-1 px-4 py-4">
         <h2 className="mb-4 text-center font-display text-base font-bold text-forest-dark">
@@ -123,7 +123,7 @@ export default function AnalisisPage() {
           <div className="h-full w-1/3 rounded-full bg-forest" />
         </div>
 
-        <div className="rounded-3xl border-2 border-forest bg-[#FAF9F6] p-6">
+        <div className="rounded-3xl border-2 border-forest bg-white p-6">
           <h2 className="mb-1 text-center font-display text-sm font-bold uppercase text-forest-dark">
             Masukkan Koordinat Anda
           </h2>

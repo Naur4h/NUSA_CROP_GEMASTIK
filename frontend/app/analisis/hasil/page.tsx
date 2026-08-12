@@ -43,7 +43,7 @@ useEffect(() => {
       Kondisi Lingkungan Terdeteksi
     </h3>
   </div>
-<div className="rounded-b-2xl bg-[#FAF9F6] p-4 shadow-lg">
+<div className="rounded-b-2xl bg-white p-4 shadow-lg">
     <div className="grid grid-cols-2 gap-3">
       <div className="rounded-xl bg-kondisiCard p-3 text-white">
         <p className="text-[10px] font-semibold uppercase opacity-80">Curah Hujan</p>
@@ -81,7 +81,7 @@ useEffect(() => {
       Rekomendasi Tanaman Lokal
     </h3>
   </div>
-<div className="rounded-b-2xl bg-[#FAF9F6] p-4 shadow-lg">
+<div className="rounded-b-2xl bg-white p-4 shadow-lg">
     <div className="space-y-3">
       {rekomendasi.map((r, i) => (
         <RecommendationCard
