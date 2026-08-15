@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 
 import StepProgress from "@/components/StepProgress";
 import Modal from "@/components/Modal";
-import RiwayatModal from "@/components/RiwayatModal";
+
 import { Check, Circle, Loader2 } from "lucide-react";
 import { postAnalisisLahan, STORAGE_KEY_FORM, STORAGE_KEY_RESULT } from "@/lib/api";
 
@@ -83,11 +83,6 @@ export default function LoadingPage() {
       </section>
 
    
-
-      <RiwayatModal
-        open={showRiwayat}
-        onClose={() => setShowRiwayat(false)}
-      />
 
       <Modal
         open={showError}

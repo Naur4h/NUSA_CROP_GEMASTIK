@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import RiwayatModal from "@/components/RiwayatModal";
+
 import Image from "next/image";
 
 import { ArrowUpRight } from "lucide-react";
@@ -98,7 +98,7 @@ export default function HomePage() {
       </section>
 
    
-      <RiwayatModal open={showRiwayat} onClose={() => setShowRiwayat(false)} />
+      
     </div>
   );
 }

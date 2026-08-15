@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 
 import StepProgress from "@/components/StepProgress";
 import Modal from "@/components/Modal";
-import RiwayatModal from "@/components/RiwayatModal";
+
 import NdviScale from "@/components/NdviScale";
 import RecommendationCard from "@/components/RecommendationCard";
 import FilterTanaman, { Kategori } from "@/components/FilterTanaman";
@@ -122,7 +122,7 @@ function HasilContent() {
       </section>
 
       <Modal open={showResetModal} onClose={() => setShowResetModal(false)} title="Apakah anda yakin untuk isi ulang data?" onConfirm={() => router.push("/analisis")} />
-      <RiwayatModal open={showRiwayat} onClose={() => setShowRiwayat(false)} />
+  
     </div>
   );
 }

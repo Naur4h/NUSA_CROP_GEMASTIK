@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 
 import Button from "@/components/Button";
 import Modal from "@/components/Modal";
-import RiwayatModal from "@/components/RiwayatModal";
+
 import { MapPin } from "lucide-react";
 import { STORAGE_KEY_FORM } from "@/lib/api";
 
@@ -222,7 +222,7 @@ export default function AnalisisPage() {
         </div>
       </section>
 
-      <RiwayatModal open={showRiwayat} onClose={() => setShowRiwayat(false)} />
+     
 
       <Modal
         open={showResetModal}
