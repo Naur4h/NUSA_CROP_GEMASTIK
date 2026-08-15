@@ -1,4 +1,3 @@
-
 "use client";
 import { getAnonymousId } from "@/lib/anonymousId";
 import { useState } from "react";
@@ -26,8 +25,9 @@ export default function AnalisisPage() {
   const [showResetModal, setShowResetModal] = useState(false);
   const [lat, setLat] = useState<number | null>(null);
   const [lng, setLng] = useState<number | null>(null);
-  const [luasLahan, setLuasLahan] = useState("");
+  // const [luasLahan, setLuasLahan] = useState("");
   const [musimTanam, setMusimTanam] = useState("");
+  const [namaLokasi, setNamaLokasi] = useState("");
   const [formError, setFormError] = useState("");
 
   const handleMapSelect = (newLat: number, newLng: number) => {
@@ -54,6 +54,7 @@ export default function AnalisisPage() {
   //     lon: lng,
   //     luas_lahan: luasLahan ? Number(luasLahan) : undefined,
   //     musim_target: musimTanam || undefined,
+  //     nama_lokasi: namaLokasi || undefined,
   //     anonymous_id: getAnonymousId(),
   //   };
 
@@ -61,32 +62,13 @@ export default function AnalisisPage() {
   //   router.push("/analisis/loading");
   // };
 
-  // const handleSubmit = () => {
-  // if (lat === null || lng === null) {
-  //   setFormError("Isi koordinat dulu ya (klik peta atau isi manual).");
-  //   return;
-  // }
-  // if (!luasLahan) {
-  //   setFormError("Luas lahan wajib diisi.");
-  //   return;
-  // }
-  // if (!musimTanam) {
-  //   setFormError("Target musim tanam wajib dipilih.");
-  //   return;
-  // }
-  // setFormError("");
-
-  // const payload = {
-  //   lat,
-  //   lon: lng,
-  //   luas_lahan: Number(luasLahan),
-  //   musim_target: musimTanam as "hujan" | "kemarau",
-  //   anonymous_id: getAnonymousId(),
-  // };
-
   const handleSubmit = () => {
   if (lat === null || lng === null) {
     setFormError("Isi koordinat dulu ya (klik peta atau isi manual).");
+    return;
+  }
+  if (!namaLokasi.trim()) {
+    setFormError("Nama lokasi wajib diisi.");
     return;
   }
   setFormError("");
@@ -94,27 +76,28 @@ export default function AnalisisPage() {
   const payload = {
     lat,
     lon: lng,
-    luas_lahan: luasLahan ? Number(luasLahan) : undefined,
-    musim_target: musimTanam ? (musimTanam as "hujan" | "kemarau") : undefined,
+    nama_lokasi: namaLokasi.trim(),
+    musim_target: musimTanam || undefined,
     anonymous_id: getAnonymousId(),
   };
 
   sessionStorage.setItem(STORAGE_KEY_FORM, JSON.stringify(payload));
   router.push("/analisis/loading");
 };
+
   const handleReset = () => setShowResetModal(true);
 
   const confirmReset = () => {
     setLat(null);
     setLng(null);
-    setLuasLahan("");
+
     setMusimTanam("");
+    setNamaLokasi("");
     setShowResetModal(false);
   };
 
   return (
     <div className="flex min-h-screen flex-col bg-white">
-   
       <section className="flex-1 px-4 py-4">
         <h2 className="mb-4 text-center font-display text-base font-bold text-forest-dark">
           Langkah 1: Masukkan Data
@@ -183,6 +166,19 @@ export default function AnalisisPage() {
 
           <div className="mb-4">
             <label className="mb-1 block text-xs font-bold uppercase text-forest-dark">
+              Nama Lokasi 
+            </label>
+            <input
+              type="text"
+              placeholder="Contoh: Kebun Belakang Rumah"
+              value={namaLokasi}
+              onChange={(e) => setNamaLokasi(e.target.value)}
+              className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-forest-dark outline-none focus:border-forest"
+            />
+          </div>
+{/* 
+          <div className="mb-4">
+            <label className="mb-1 block text-xs font-bold uppercase text-forest-dark">
               Masukkan Luas Lahan (Opsional)
             </label>
             <input
@@ -192,7 +188,7 @@ export default function AnalisisPage() {
               onChange={(e) => setLuasLahan(e.target.value)}
               className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-forest-dark outline-none focus:border-forest"
             />
-          </div>
+          </div> */}
 
           <div className="mb-6">
             <label className="mb-1 block text-xs font-bold uppercase text-forest-dark">
@@ -225,7 +221,6 @@ export default function AnalisisPage() {
           </div>
         </div>
       </section>
-     
 
       <RiwayatModal open={showRiwayat} onClose={() => setShowRiwayat(false)} />
 

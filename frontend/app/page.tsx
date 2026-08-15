@@ -84,7 +84,7 @@ export default function HomePage() {
                 )}
               </div>
 
-              <div className="flex-1 rounded-2xl bg-[#FAF9F6] p-4 shadow-lg mb-5">
+              <div className="flex-1 rounded-2xl bg-white p-4 shadow-lg mb-5">
                 <h4 className="mb-1 font-display text-sm font-bold text-[#0A3323]">
                   {step.title}
                 </h4>

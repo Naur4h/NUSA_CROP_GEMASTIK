@@ -35,7 +35,7 @@ export const CROPS = {
       "Dapat diolah menjadi tepung, bioetanol, hingga pemanis alami.",
     ],
     alasan: [
-      "Kondisi kering — curah hujan lahan Anda (340 mm/musim) sesuai toleransi tanaman.",
+      "Kondisi kering — curah hujan lahan Anda (340 mm/tahun) sesuai toleransi tanaman.",
       "pH tanah masam (5.2) masih dalam batas yang bisa ditoleransi.",
       "Cocok untuk lahan dengan tingkat kesuburan rendah.",
     ],

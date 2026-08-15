@@ -1,3 +1,4 @@
+import { ChevronRight } from "lucide-react";
 type RecommendationCardProps = {
   rank: number;
   name: string;
@@ -38,8 +39,11 @@ export default function RecommendationCard({
           <span className="font-display text-sm font-bold text-forest-dark">
             {name}
           </span>
-          <span className="shrink-0 font-display text-base font-bold text-forest-dark">
-            {score}%
+          <span className="flex shrink-0 items-center gap-1">
+            <span className="font-display text-base font-bold text-forest-dark">
+              {score}%
+            </span>
+            <ChevronRight className="h-4 w-4 text-forest-dark/50" />
           </span>
         </span>
         <span className="mt-0.5 block text-xs leading-relaxed text-forest-dark/60">

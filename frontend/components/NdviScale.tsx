@@ -35,7 +35,7 @@ export default function NdviScale() {
   return (
     <div>
       <h3 className="mt-4 mb-2 text-center font-display text-base font-bold text-forest-dark">
-        NDVI
+         Skor Kondisi Vegetasi (NDVI)
       </h3>
 
       <div

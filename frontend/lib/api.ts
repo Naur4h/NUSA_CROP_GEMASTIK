@@ -147,6 +147,20 @@
 const API_BASE = process.env.NEXT_PUBLIC_URL;
 const USE_MOCK = false; // backend sudah live & ke-test, matikan mock
 
+// export type KondisiLahan = {
+//   status?: string;
+//   curah_hujan: number;
+//   curah_hujan_bulanan?: number[];
+//   suhu: number;
+//   et0?: number;
+//   elevasi: number;
+//   ph_tanah: number;
+//   nitrogen?: number;
+//   organic_carbon?: number;
+//   tekstur_kelas?: string;
+//   tekstur_tanah?: { sand: number; silt: number; clay: number };
+//   kesuburan_tanah: number;
+// };
 export type KondisiLahan = {
   status?: string;
   curah_hujan: number;
@@ -159,6 +173,7 @@ export type KondisiLahan = {
   organic_carbon?: number;
   tekstur_kelas?: string;
   tekstur_tanah?: { sand: number; silt: number; clay: number };
+  ndvi?: number;
   kesuburan_tanah: number;
 };
 
@@ -173,6 +188,7 @@ export type RekomendasiItem = {
   tingkat_kepercayaan?: string;
   alasan_rekomendasi?: string[];
   rekomendasi_id: number; // dipakai untuk fetch detail tanaman
+  jenis_tanaman?: string;
 };
 
 export type RecommendResponse = {
@@ -191,21 +207,36 @@ export type RecommendResponse = {
 //   anonymous_id: string;
 // };
 
+// export type AnalisisPayload = {
+//   lat: number;
+//   lon: number;
+//   luas_lahan?: number;
+//   musim_target?: "hujan" | "kemarau";
+//   anonymous_id: string;
+// };
+
+// export type AnalisisPayload = {
+//   lat: number;
+//   lon: number;
+//   luas_lahan?: number;
+//   musim_target?: string;
+//   nama_lokasi?: string;
+//   anonymous_id: string;
+// };
 export type AnalisisPayload = {
   lat: number;
   lon: number;
-  luas_lahan?: number;
-  musim_target?: "hujan" | "kemarau";
+  nama_lokasi: string;
+  musim_target?: string;
   anonymous_id: string;
 };
-
 export type CropDetail = {
   nama: string;
   nama_latin: string;
   deskripsi: string;
   jenis_tanaman: string;
   umur_panen: string;
-  potensi_hasil: string;
+   produktivitas_tanaman: string;
   cara_budidaya: string;
   syarat_tumbuh: {
     ph: { min: number; max: number };
@@ -221,16 +252,44 @@ export type CropDetail = {
   };
 };
 
+// export type RiwayatItem = {
+//   id: number;
+//   anonymous_id: string;
+//   lat: number;
+//   lon: number;
+//   luas_lahan: number;
+//   musim_target: string;
+//   nama_lokasi?: string;
+//   curah_hujan: number;
+//   ph_tanah: number;
+//   elevasi: number;
+//   suhu: number;
+//   kesuburan_tanah: number;
+//   dibuat_pada: string;
+//   rekomendasi: {
+//     id: number;
+//     nama_tanaman: string;
+//     nama_latin: string;
+//     kesuburan_ideal: string;
+//     ph_ideal: string;
+//     elevasi_ideal: string;
+//     skor_kesesuaian: number;
+//     ranking: number;
+//   }[];
+// };
+
 export type RiwayatItem = {
   id: number;
   anonymous_id: string;
   lat: number;
   lon: number;
-  luas_lahan: number;
   musim_target: string;
+  nama_lokasi: string;
+  nama_tampilan: string;
   curah_hujan: number;
   ph_tanah: number;
   elevasi: number;
+  ndvi?: number;
   suhu: number;
   kesuburan_tanah: number;
   dibuat_pada: string;
@@ -244,6 +303,13 @@ export type RiwayatItem = {
     skor_kesesuaian: number;
     ranking: number;
   }[];
+};
+
+export type PaginatedRiwayat = {
+  count: number;
+  next: string | null;
+  previous: string | null;
+  results: RiwayatItem[];
 };
 
 // Ubah nama tanaman jadi slug buat nyari file gambar, contoh: "Kacang Panjang" -> "kacangpanjang"
@@ -314,8 +380,18 @@ export async function getCropDetail(rekomendasiId: number): Promise<CropDetail> 
   return res.json();
 }
 
-export async function getRiwayatList(anonymousId: string): Promise<RiwayatItem[]> {
-  const res = await apiFetch(`/api/riwayat/?anonymous_id=${anonymousId}`);
+// export async function getRiwayatList(anonymousId: string): Promise<RiwayatItem[]> {
+//   const res = await apiFetch(`/api/riwayat/?anonymous_id=${anonymousId}`);
+//   if (!res.ok) throw new Error("Gagal memuat riwayat");
+//   return res.json();
+// }
+
+
+export async function getRiwayatPage(
+  anonymousId: string,
+  page: number = 1
+): Promise<PaginatedRiwayat> {
+  const res = await apiFetch(`/api/riwayat/?anonymous_id=${anonymousId}&page=${page}`);
   if (!res.ok) throw new Error("Gagal memuat riwayat");
   return res.json();
 }
