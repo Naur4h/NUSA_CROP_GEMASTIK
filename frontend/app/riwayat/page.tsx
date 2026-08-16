@@ -96,18 +96,21 @@ export default function RiwayatPage() {
               {i + 1}
             </span>
             <span className="flex flex-1 items-center gap-2 px-3 py-3">
-              <span className="flex-1 text-left text-xs text-forest-dark">
-                <span className="block font-semibold">{item.nama_tampilan}</span>
-                {item.rekomendasi[0] && (
-                  <span className="block text-forest-dark/60">
-                    • Rekomendasi teratas: {item.rekomendasi[0].nama_tanaman} (
-                    {Math.round(item.rekomendasi[0].skor_kesesuaian * 100)}%)
-                  </span>
-                )}
-                <span className="block text-forest-dark/60">
-                  • {new Date(item.dibuat_pada).toLocaleDateString("id-ID")}
-                </span>
-              </span>
+             <span className="flex-1 text-left text-xs text-forest-dark">
+  <span className="block font-semibold">{item.nama_tampilan}</span>
+  <span className="block text-forest-dark/60">
+    • {item.lat.toFixed(4)}, {item.lon.toFixed(4)}
+  </span>
+  {item.rekomendasi[0] && (
+    <span className="block text-forest-dark/60">
+      • Rekomendasi teratas: {item.rekomendasi[0].nama_tanaman} (
+      {Math.round(item.rekomendasi[0].skor_kesesuaian * 100)}%)
+    </span>
+  )}
+  <span className="block text-forest-dark/60">
+    • {new Date(item.dibuat_pada).toLocaleDateString("id-ID")}
+  </span>
+</span>
               <ChevronRight className="h-4 w-4 shrink-0 text-forest-dark/40" />
             </span>
           </button>

@@ -111,7 +111,7 @@ function HasilContent() {
                   rank={i + 1}
                   name={r.nama}
                   latin={r.nama_latin}
-                  note={`${r.kesuburan_ideal} | pH ${r.ph_ideal}`}
+                 note={`${r.jenis_tanaman} | ${r.kesuburan_ideal} | pH ${r.ph_ideal}`}
                   score={Math.round(r.skor_kesesuaian * 100)}
                   onClick={() => router.push(`/analisis/detail/${r.rekomendasi_id}`)}
                 />

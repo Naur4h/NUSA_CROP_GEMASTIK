@@ -18,7 +18,9 @@ const MapPicker = dynamic(() => import("@/components/MapPicker"), {
     </div>
   ),
 });
-
+function isInIndonesia(lat: number, lon: number): boolean {
+  return lat >= -11 && lat <= 6 && lon >= 95 && lon <= 141;
+}
 export default function AnalisisPage() {
   const [showRiwayat, setShowRiwayat] = useState(false);
   const router = useRouter();
@@ -65,6 +67,10 @@ export default function AnalisisPage() {
   const handleSubmit = () => {
   if (lat === null || lng === null) {
     setFormError("Isi koordinat dulu ya (klik peta atau isi manual).");
+    return;
+  }
+   if (!isInIndonesia(lat, lng)) {
+    setFormError("Koordinat berada di luar wilayah Indonesia. Silakan pilih lokasi di dalam Indonesia.");
     return;
   }
   if (!namaLokasi.trim()) {

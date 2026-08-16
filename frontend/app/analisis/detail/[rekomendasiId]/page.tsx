@@ -99,7 +99,7 @@ export default function DetailTanamanPage() {
               />
             </div>
             <div className="rounded-2xl bg-ringkasanCard p-3">
-              <CircularGauge size={64} value={80} label="Tingkat Kepercayaan model" sublabel={detail.ringkasan_rekomendasi.tingkat_kepercayaan} />
+              <CircularGauge size={64} value={80} label="Tingkat Kepercayaan Model" sublabel={detail.ringkasan_rekomendasi.tingkat_kepercayaan} />
             </div>
           </div>
 

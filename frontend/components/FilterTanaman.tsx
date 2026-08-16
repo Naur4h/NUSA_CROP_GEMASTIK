@@ -27,7 +27,7 @@ export default function FilterTanaman({
         }`}
       >
         {value !== "Semua kategori" && <Check className="h-3.5 w-3.5" />}
-        {value === "Semua kategori" ? "FILTER TANAMAN" : value.toUpperCase()}
+        {value === "Semua kategori" ? "FILTER KATEGORI" : value.toUpperCase()}
         <ChevronDown className="h-3.5 w-3.5" />
       </button>
 

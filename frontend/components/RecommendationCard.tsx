@@ -1,4 +1,5 @@
 import { ChevronRight } from "lucide-react";
+
 type RecommendationCardProps = {
   rank: number;
   name: string;
@@ -15,6 +16,7 @@ function rankColor(rank: number) {
   if (rank === 4) return "bg-rank4";
   return "bg-rank5";
 }
+
 export default function RecommendationCard({
   rank,
   name,
@@ -39,21 +41,21 @@ export default function RecommendationCard({
           <span className="font-display text-sm font-bold text-forest-dark">
             {name}
           </span>
-          <span className="flex shrink-0 items-center gap-1">
-            <span className="font-display text-base font-bold text-forest-dark">
-              {score}%
-            </span>
-            <ChevronRight className="h-4 w-4 text-forest-dark/50" />
-          </span>
+          <ChevronRight className="h-4 w-4 shrink-0 text-forest-dark/50" />
         </span>
         <span className="mt-0.5 block text-xs leading-relaxed text-forest-dark/60">
           {note}
         </span>
-        <span className="mt-2 block h-1.5 w-full overflow-hidden rounded-full bg-forest-dark/15">
-          <span
-            className="block h-full rounded-full bg-forest"
-            style={{ width: `${score}%` }}
-          />
+        <span className="mt-2 flex items-center gap-2">
+          <span className="h-1.5 flex-1 overflow-hidden rounded-full bg-forest-dark/15">
+            <span
+              className="block h-full rounded-full bg-forest"
+              style={{ width: `${score}%` }}
+            />
+          </span>
+          <span className="shrink-0 font-display text-base font-bold text-forest-dark">
+            {score}%
+          </span>
         </span>
       </span>
     </button>
