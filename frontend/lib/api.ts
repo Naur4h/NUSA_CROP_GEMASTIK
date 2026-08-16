@@ -302,6 +302,7 @@ export type RiwayatItem = {
     elevasi_ideal: string;
     skor_kesesuaian: number;
     ranking: number;
+    jenis_tanaman?: string;
   }[];
 };
 
@@ -336,6 +337,7 @@ export function normalizeRekomendasi(raw: any): RekomendasiItem {
     tingkat_kepercayaan: raw.tingkat_kepercayaan,
     alasan_rekomendasi: raw.alasan_rekomendasi,
     rekomendasi_id: raw.rekomendasi_id ?? raw.id,
+    jenis_tanaman: raw.jenis_tanaman,
   };
 }
 

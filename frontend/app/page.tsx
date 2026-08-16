@@ -31,23 +31,23 @@ export default function HomePage() {
                
             </a> */} 
 
-            <div className="relative z-10 mt-4 flex items-center gap-3">
-              <a 
-                href="/analisis" 
-                className="inline-flex items-center gap-1 whitespace-nowrap rounded-full bg-cream-light px-5 py-2.5 text-sm font-semibold text-forest-dark" 
-              > 
-                Coba Sekarang 
-                <ArrowUpRight className="h-5 w-5 shrink-0" strokeWidth={1.5} /> 
-              </a>
+         <div className="relative z-10 mt-4 flex items-center gap-2">
+  <a 
+    href="/analisis" 
+    className="inline-flex items-center gap-1 whitespace-nowrap rounded-full bg-cream-light px-4 py-2 text-xs font-semibold text-forest-dark" 
+  > 
+    Coba Sekarang 
+    <ArrowUpRight className="h-3.5 w-3.5 shrink-0" strokeWidth={1.5} /> 
+  </a>
 
-              <button
-                type="button"
-                onClick={() => setShowTutorial(true)}
-                className="inline-flex items-center whitespace-nowrap rounded-full border-[3px] border-forest-dark bg-transparent px-5 py-2 text-sm font-semibold text-forest-dark"
-              >
-                Video Tutorial
-              </button>
-            </div>
+  <button
+    type="button"
+    onClick={() => setShowTutorial(true)}
+    className="inline-flex items-center whitespace-nowrap rounded-full border-2 border-forest-dark bg-transparent px-4 py-2 text-xs font-semibold text-forest-dark"
+  >
+    Video Tutorial
+  </button>
+</div>
 
            <div className="pointer-events-none absolute -top-16 -right-4 h-72 w-72">
   <Image 

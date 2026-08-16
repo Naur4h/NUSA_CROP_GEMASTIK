@@ -18,9 +18,9 @@ export default function FilterTanaman({
 
   return (
     <>
-      <button
-        onClick={() => setOpen(true)}
-        className={`flex items-center gap-2 rounded-full border-2 px-4 py-2 text-xs font-bold ${
+     <button
+  onClick={() => setOpen(true)}
+  className={`flex items-center gap-1.5 whitespace-nowrap rounded-full border-2 px-3 py-1.5 text-[10px] font-bold ${
           value !== "Semua kategori"
             ? "border-forest bg-forest text-white"
             : "border-forest-dark bg-white text-forest-dark"

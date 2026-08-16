@@ -63,7 +63,7 @@ export default function DetailTanamanPage() {
             </div>
             <div className="flex items-center gap-1.5">
               <BarChart3 className="h-4 w-4 text-forest" />
-              <div><p className="font-semibold text-forest-dark">Produktivitas</p><p className="text-forest-dark/60">{detail.produktivitas_tanaman}</p></div>
+              <div><p className="font-semibold text-forest-dark">Produktivitas Nasional</p><p className="text-forest-dark/60">{detail.produktivitas_tanaman}</p></div>
             </div>
           </div>
         </div>

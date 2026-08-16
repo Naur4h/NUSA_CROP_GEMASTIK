@@ -48,13 +48,13 @@ export default function Modal({
               <>
                 <button
                   onClick={onClose}
-                  className="rounded-full bg-alert px-5 py-2 text-xs font-semibold text-white"
+                  className="rounded-full border border-forest-dark/30 px-5 py-2 text-xs font-semibold text-forest-dark"
                 >
                   TUTUP
                 </button>
                 <button
                   onClick={onConfirm ?? onClose}
-                  className="rounded-full border border-forest-dark/30 px-5 py-2 text-xs font-semibold text-forest-dark"
+                  className="rounded-full bg-alert px-5 py-2 text-xs font-semibold text-white"
                 >
                   COBA LAGI
                 </button>
@@ -62,16 +62,16 @@ export default function Modal({
             ) : (
               <>
                 <button
-                  onClick={onConfirm ?? onClose}
-                  className="rounded-full bg-[#E8A93C] px-6 py-2 text-xs font-semibold text-white"
-                >
-                  {confirmLabel}
-                </button>
-                <button
                   onClick={onClose}
                   className="rounded-full border border-forest-dark/30 px-6 py-2 text-xs font-semibold text-forest-dark"
                 >
                   {cancelLabel}
+                </button>
+                <button
+                  onClick={onConfirm ?? onClose}
+                  className="rounded-full bg-[#E8A93C] px-6 py-2 text-xs font-semibold text-white"
+                >
+                  {confirmLabel}
                 </button>
               </>
             )}
