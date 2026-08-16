@@ -1,9 +1,11 @@
 "use client";
 
+import { useState } from "react";
 import { Lexend } from "next/font/google";
 import "./globals.css";
 import TopHeader from "@/components/TopHeader";
 import BottomNav from "@/components/BottomNav";
+import TutorialModal from "@/components/TutorialModal";
 
 const lexend = Lexend({
   subsets: ["latin"],
@@ -16,6 +18,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const [showTutorial, setShowTutorial] = useState(false);
+
   return (
     <html lang="id">
       <body className={`${lexend.variable} font-lexend`}>
@@ -24,10 +28,12 @@ export default function RootLayout({
             <div className="flex h-full flex-col">
               <TopHeader />
               <main className="flex-1 overflow-y-auto pb-20">{children}</main>
-              <BottomNav />
+              <BottomNav onTutorialClick={() => setShowTutorial(true)} />
             </div>
           </div>
         </div>
+
+        <TutorialModal open={showTutorial} onClose={() => setShowTutorial(false)} />
       </body>
     </html>
   );
