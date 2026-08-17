@@ -4,8 +4,6 @@ import { useState } from "react";
 
 import Image from "next/image";
 
-import { ArrowUpRight } from "lucide-react";
-
 import TutorialModal from "@/components/TutorialModal";
 
 export default function HomePage() {
@@ -37,16 +35,16 @@ export default function HomePage() {
     className="inline-flex items-center gap-1 whitespace-nowrap rounded-full bg-cream-light px-4 py-2 text-xs font-semibold text-forest-dark" 
   > 
     Coba Sekarang 
-    <ArrowUpRight className="h-3.5 w-3.5 shrink-0" strokeWidth={1.5} /> 
+    
   </a>
 
-  <button
-    type="button"
-    onClick={() => setShowTutorial(true)}
-    className="inline-flex items-center whitespace-nowrap rounded-full border-2 border-forest-dark bg-transparent px-4 py-2 text-xs font-semibold text-forest-dark"
-  >
-    Video Tutorial
-  </button>
+ <button
+  type="button"
+  onClick={() => setShowTutorial(true)}
+  className="inline-flex items-center whitespace-nowrap rounded-full border-2 border-forest-dark bg-transparent px-[14px] py-[6px] text-xs font-semibold text-forest-dark"
+>
+  Video Tutorial
+</button>
 </div>
 
            <div className="pointer-events-none absolute -top-16 -right-4 h-72 w-72">

@@ -210,21 +210,20 @@ export default function AnalisisPage() {
               <option value="kemarau">Musim Kemarau</option>
             </select>
           </div>
-
-          <div className="flex gap-3">
-            <button
-              onClick={handleSubmit}
-              className="flex-1 rounded-full bg-[#567156] py-3 text-sm font-semibold text-white hover:bg-forest-dark"
-            >
-              KIRIM
-            </button>
-            <button
-              onClick={handleReset}
-              className="flex-1 rounded-full border-2 border-forest py-3 text-sm font-semibold text-forest hover:bg-forest/5"
-            >
-              KOSONGKAN
-            </button>
-          </div>
+<div className="flex gap-3">
+  <button
+    onClick={handleReset}
+    className="flex-1 rounded-full border-2 border-forest py-3 text-sm font-semibold text-forest hover:bg-forest/5"
+  >
+    KOSONGKAN
+  </button>
+  <button
+    onClick={handleSubmit}
+    className="flex-1 rounded-full bg-[#567156] py-3 text-sm font-semibold text-white hover:bg-forest-dark"
+  >
+    KIRIM
+  </button>
+</div>
         </div>
       </section>
 

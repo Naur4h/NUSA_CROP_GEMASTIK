@@ -36,7 +36,7 @@ export default function Modal({
             {isError ? "WARNING!" : "TUNGGU SEBENTAR!"}
           </p>
         </div>
-        <div className="px-6 py-5 text-center">
+        <div className="px-6 py-8 text-center">
           <p className="mb-5 text-sm font-semibold text-forest-dark">{title}</p>
           {description && (
             <p className="mb-5 text-xs leading-relaxed text-forest-dark/70">
@@ -45,35 +45,35 @@ export default function Modal({
           )}
           <div className="flex justify-center gap-3">
             {isError ? (
-              <>
-                <button
-                  onClick={onClose}
-                  className="rounded-full border border-forest-dark/30 px-5 py-2 text-xs font-semibold text-forest-dark"
-                >
-                  TUTUP
-                </button>
-                <button
-                  onClick={onConfirm ?? onClose}
-                  className="rounded-full bg-alert px-5 py-2 text-xs font-semibold text-white"
-                >
-                  COBA LAGI
-                </button>
-              </>
+           <>
+  <button
+    onClick={onClose}
+    className="flex-1 rounded-full border-2 border-forest-dark/30 px-4 py-2.5 text-xs font-semibold text-forest-dark"
+  >
+    TUTUP
+  </button>
+  <button
+    onClick={onConfirm ?? onClose}
+    className="flex-1 rounded-full bg-alert px-4 py-2.5 text-xs font-semibold text-white"
+  >
+    COBA LAGI
+  </button>
+</>
             ) : (
-              <>
-                <button
-                  onClick={onClose}
-                  className="rounded-full border border-forest-dark/30 px-6 py-2 text-xs font-semibold text-forest-dark"
-                >
-                  {cancelLabel}
-                </button>
-                <button
-                  onClick={onConfirm ?? onClose}
-                  className="rounded-full bg-[#E8A93C] px-6 py-2 text-xs font-semibold text-white"
-                >
-                  {confirmLabel}
-                </button>
-              </>
+            <>
+  <button
+    onClick={onClose}
+    className="flex-1 rounded-full border-2 border-forest-dark/30 px-4 py-2.5 text-xs font-semibold text-forest-dark"
+  >
+    {cancelLabel}
+  </button>
+  <button
+    onClick={onConfirm ?? onClose}
+    className="flex-1 rounded-full bg-[#E8A93C] px-4 py-2.5 text-xs font-semibold text-white"
+  >
+    {confirmLabel}
+  </button>
+</>
             )}
           </div>
         </div>

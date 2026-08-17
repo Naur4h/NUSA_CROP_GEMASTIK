@@ -35,7 +35,7 @@ function HasilContent() {
       : rekomendasi.filter((r) => r.jenis_tanaman === kategori);
 
   return (
-    <div className="flex min-h-screen flex-col bg-[#FAF9F6]">
+    <div className="flex min-h-screen flex-col bg-white">
       <StepProgress step={3} label="Langkah 3: Terima Rekomendasi" />
 
       <section className="flex-1 px-4 py-4">
