@@ -1,6 +1,6 @@
 "use client";
 
-import { X, Play } from "lucide-react";
+import { X } from "lucide-react";
 
 export default function TutorialModal({
   open,
@@ -22,14 +22,14 @@ export default function TutorialModal({
         </div>
 
         <div className="p-5">
-          {/* Placeholder video — ganti jadi <video> atau iframe YouTube kalau video-nya udah siap */}
-          <div className="flex aspect-video items-center justify-center rounded-xl bg-gray-200">
-            <button
-              className="flex h-14 w-14 items-center justify-center rounded-full bg-forest-dark"
-              aria-label="Putar video"
-            >
-              <Play className="h-6 w-6 fill-white text-white" />
-            </button>
+          <div className="aspect-video overflow-hidden rounded-xl">
+            <iframe
+              src="https://www.youtube.com/embed/h4GJpX3fO70"
+              title="Tutorial NUSA-CROP"
+              className="h-full w-full"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
           </div>
         </div>
       </div>
