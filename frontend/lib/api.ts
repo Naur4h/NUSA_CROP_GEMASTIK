@@ -428,6 +428,7 @@ export function riwayatToRecommendResponse(item: RiwayatItem): RecommendResponse
         suhu: item.suhu,
         elevasi: item.elevasi,
         ph_tanah: item.ph_tanah,
+          ndvi: item.ndvi,
         kesuburan_tanah: item.kesuburan_tanah,
       },
       rekomendasi: item.rekomendasi
