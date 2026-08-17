@@ -173,7 +173,7 @@ export type KondisiLahan = {
   organic_carbon?: number;
   tekstur_kelas?: string;
   tekstur_tanah?: { sand: number; silt: number; clay: number };
-  ndvi?: number;
+  ndvi?: number | null;
   kesuburan_tanah: number;
 };
 
