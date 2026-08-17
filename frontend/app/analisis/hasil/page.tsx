@@ -71,19 +71,18 @@ function HasilContent() {
               </div>
               <div className="rounded-xl bg-kondisiCard p-3 text-white">
                 <p className="text-[10px] font-semibold uppercase opacity-80">Skor Kondisi Vegetasi (NDVI)</p>
-               <p className="font-display text-lg font-bold">
-  {kondisi_lahan.ndvi != null ? kondisi_lahan.ndvi.toFixed(2) : "-"}
-</p>
-
-<span className="mt-1 inline-block rounded-full bg-sand px-2 py-0.5 text-[10px] font-semibold text-forest-dark">
-  {kondisi_lahan.ndvi == null
-    ? "Tidak tersedia"
-    : kondisi_lahan.ndvi > 0.6
-    ? "Subur"
-    : kondisi_lahan.ndvi > 0.2
-    ? "Sedang"
-    : "Marginal"}
-</span>
+                <p className="font-display text-lg font-bold">
+                  {kondisi_lahan.ndvi !== undefined ? kondisi_lahan.ndvi.toFixed(2) : "-"}
+                </p>
+                <span className="mt-1 inline-block rounded-full bg-sand px-2 py-0.5 text-[10px] font-semibold text-forest-dark">
+                  {kondisi_lahan.ndvi === undefined
+                    ? "Tidak tersedia"
+                    : kondisi_lahan.ndvi > 0.6
+                    ? "Subur"
+                    : kondisi_lahan.ndvi > 0.2
+                    ? "Sedang"
+                    : "Marginal"}
+                </span>
               </div>
             </div>
             <NdviScale />
