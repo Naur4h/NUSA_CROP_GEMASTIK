@@ -47,32 +47,32 @@ export default function Modal({
             {isError ? (
            <>
   <button
-    onClick={onClose}
-    className="flex-1 rounded-full border-2 border-forest-dark/30 px-4 py-2.5 text-xs font-semibold text-forest-dark"
-  >
-    TUTUP
-  </button>
-  <button
-    onClick={onConfirm ?? onClose}
-    className="flex-1 rounded-full bg-alert px-4 py-2.5 text-xs font-semibold text-white"
-  >
-    COBA LAGI
-  </button>
+  onClick={onClose}
+  className="min-w-[110px] rounded-full border-2 border-forest-dark/30 px-6 py-2.5 text-xs font-semibold text-forest-dark"
+>
+  TUTUP
+</button>
+<button
+  onClick={onConfirm ?? onClose}
+  className="min-w-[110px] rounded-full bg-alert px-6 py-2.5 text-xs font-semibold text-white"
+>
+  COBA LAGI
+</button>
 </>
             ) : (
             <>
-  <button
-    onClick={onClose}
-    className="flex-1 rounded-full border-2 border-forest-dark/30 px-4 py-2.5 text-xs font-semibold text-forest-dark"
-  >
-    {cancelLabel}
-  </button>
-  <button
-    onClick={onConfirm ?? onClose}
-    className="flex-1 rounded-full bg-[#E8A93C] px-4 py-2.5 text-xs font-semibold text-white"
-  >
-    {confirmLabel}
-  </button>
+ <button
+  onClick={onClose}
+  className="min-w-[110px] rounded-full border-2 border-forest-dark/30 px-6 py-2.5 text-xs font-semibold text-forest-dark"
+>
+  {cancelLabel}
+</button>
+<button
+  onClick={onConfirm ?? onClose}
+  className="min-w-[110px] rounded-full bg-[#E8A93C] px-6 py-2.5 text-xs font-semibold text-white"
+>
+  {confirmLabel}
+</button>
 </>
             )}
           </div>
